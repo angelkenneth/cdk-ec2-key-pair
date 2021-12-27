@@ -190,7 +190,7 @@ export class KeyPair extends Construct implements cdk.ITaggable {
         StorePublicKey: props.storePublicKey || false,
         ExposePublicKey: props.exposePublicKey || false,
         RemoveKeySecretsAfterDays: props.removeKeySecretsAfterDays || 0,
-        SecretPrefix: props.secretPrefix || 'ec2-ssh-key/',
+        SecretPrefix: props.secretPrefix ?? 'ec2-ssh-key/',
         StackName: stack,
         Tags: cdk.Lazy.any({
           produce: () => this.tags.renderTags(),
